@@ -1,14 +1,4 @@
-:root{
-  --white:#fff;
-  --black:#000;
-  --transparent-black:rgba(0, 0, 0, 0.4);
-  --light-black:#0d1e2d;
-  --grey:#777;
-  --transparent-white:rgba(255, 255, 255, 0.6);
-  --transparent-white-2:rgba(255, 255, 255, 0.7);
-  --social-background: #f8f9fa;
-  --social-color: #0d1e2d;
-}
+
 html{
   margin:5px;
 }
@@ -543,8 +533,6 @@ h1, h2, h3, h4, h5, h6, .font-heading {
     margin: 30px 10px;
   }
 }
-
-
 /*Timeline*/
 .timeline {
   position: relative;
