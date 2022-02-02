@@ -1,515 +1,360 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shinjon Das | Me</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;450;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        html{
-            background-color: #b9bec0;
-            font-family: 'Lora',serif;
-        }
-        .section {
-            clear: both;
-            padding: 0px;
-            margin: 0px;
-        }
-        .row {
-            zoom: 1; 
-        }
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-        .row:before,
-        .row:after {
-            content:"";
-            display:table;
-        }
-        .row:after {
-            clear:both;
-        }
-        .col {
-            display: block;
-            float:left;
-            margin: 1% 0 1% 1.6%;
-        }
+    <title>Hello there!</title>
 
-        .col:first-child { margin-left: 0; } 
+    <!-- Favicons -->
+    <link href="img/android-chrome-192x192.png" rel="icon" />
+    <link href="img/apple-touch-icon.png" rel="apple-touch-icon" />
 
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=https://fonts.googleapis.com/css?family=Inconsolata:400,500,600,700|Raleway:400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
 
-        .span-1-of-3 {
-            width: 32.26%; 
-        }
-        @media only screen and (max-width: 720px) {   
-            .span-1-of-3 {
-                width: 100%;
-            }
-        }
-        .image-cropper {
-            margin-left: 40%;
-            cursor:pointer;
-            margin-top:3%;
-            width: 300px;
-            height: 300px;
-            position: relative;
-            overflow: hidden;
-            border:10px solid   #b9bec0;
-            border-radius: 50%;
-            box-shadow:  5px 5px 20px #898d8e, 
-             -5px -5px 20px #e9eff2;
-        }
-        .image-cropper:hover{
-            box-shadow:  5px 5px 20px #6c6f70, 
-             -5px -5px 20px #e9f0f3;
-        }
-        .image-cropper img{
-            display: inline;
-            margin: 0 auto;
-            height: 100%;
-            width: auto;  
-        }
-        .navbar-list{
-            margin-top:30px;
-            border-radius: 50px;
-            margin-left:28%;
-            list-style: none;
-            display: block;
-            cursor:pointer;
-            border-radius: 50px;
-            padding-bottom: 20px;
-            background: #b9bec0;
-            box-shadow:  5px 5px 20px #a5a9ab, 
-                        -5px -5px 20px #cdd3d5;
-            width:46%;
-            padding-top: 20px;
-            align-items: center;
-        }
-        .navbar-list li{
-            display: inline;
-            padding: 20px; 
-            margin-left: 20px; 
-            border-radius: 50px;
-            border-radius: 50px;
-            display: pointer;
-            font-weight: 400;
-             
-        }
-        .navbar-list:hover,
-        .navbar-list:active{
-            border-radius: 50px;
-            background: #b9bec0;
-            box-shadow: inset 5px 5px 20px #a1a5a7, 
-            inset -5px -5px 20px #cdd3d5;
-        }
-        .nav-ele a{
-            text-decoration: none;
-            color:#595d5f;
-            padding-bottom: 15px;
-            transition: color 0.5s;
-            font-weight: 600;
-            
-        }
-        .nav-ele a:hover,.about i,
-        .nav-ele a:active{
-            text-shadow:-3px 3px 15px rgba(0,0,0,0.5),3px -3px 15px rgba(255,255,255,0.8);
-        }
-        .nav-ele:hover::before,.about i::before
-        .nav-ele:active::before{
-            z-index: 10;
-            box-shadow: inset -3px 3px 15px rgba(0,0,0,0.5),
-            inset 3px -3px 15px rgba(255, 246, 246, 0.8) ;
-        }
-        .nav-ele:hover::after,.about i::after,
-        .nav-ele:active::after{
-            box-shadow:  -3px 3px 15px rgba(0,0,0,0.5),
-             3px -3px 15px rgba(255, 246, 246, 0.8) ;
-        }
-        .container{
-            margin-top:50px;
-            cursor:pointer;
-            padding:30px;
-            margin-left:20%;
-            width:60%;
-            color:#595d5f;
-            background: #b9bec0;
-            box-shadow:  5px 5px 20px #a5a9ab, 
-                        -5px -5px 20px #cdd3d5;
-            border-radius: 50px;
-        }
-        .about h3,.projects h3{
-            text-align: center;
-            padding-bottom:20px;
-            color:#595d5f;
-            margin-bottom:-50px;
-            margin-top: 50px;
-        }
-        .about i{
-            margin-top:10%;
-            text-align: center;
-            margin-left: 120px;
-            font-size: 150%;
-            cursor: pointer;
-            text-shadow: none;
-        }
-        .about i:hover{
-            text-shadow: none;
-        }
-        .projects{
-            margin-top: 30px;
-        }
-        .projects h3{
-            margin-top: 20px;
-        }
-        .project-box{
-            width: 74%;
-            margin-top: 20px;
-            margin-left:19%;
-        }
-        .project-box .box{
-            margin-top: 40px;
-            padding:40px;
-            width:50%;
-            color:#595d5f;
-            border-radius: 50px;
-            background: #b9bec0;
-            box-shadow:  5px 5px 20px #949799, 
-                        -5px -5px 20px #dfe5e7;
-            
-        }
-        .box p{
-            text-align: center;
-            font-size: 80%;
-        }
-        .box h4{
-            text-align: center;
-            margin-bottom: 10px;
-        }
-        .btn a{
-            text-decoration: none;
-            color:#595d5f;
-            font-size: 105%;
-        }
-        .btn{
-            border-radius: 50px;
-            margin-left: 12%;
-            padding:10px;
-            background-color:#b9bec0;
-            box-shadow:  2px 2px 10px #8b8e8f, 
-                        -2px -2px 10px #e2e8e9;
-            border: none;
-            margin-top:5%;
-        }
-        .btn:hover{
-            box-shadow: inset 2px 2px 10px #8b8e8f, 
-                        inset -2px -2px 10px #e2e8e9;
-        }
-        .education{
-                font-family: 'Lora',serif; 
-                color:#595d5f;
-                font-size: 90%;
-                font-weight: 500;
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <script src="https://tarptaeya.github.io/repo-card/repo-card.js"></script>
+  </head>
 
-            }
-            .education h2,.education p{
-                font-size: 95%;
-            }
-            .timeline {
-            position: relative;
-            max-width: 1200px;
-            margin: 0 auto;
-            }
-            .timeline::after {
-            content: '';
-            position: absolute;
-            width: 6px;
-            background-color: #d5d8da;
-            box-shadow: inset 4px 4px 5px #9d9fa1,inset -4px -4px 5px #e9ecee;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -3px;
-            }
-            .wrap {
-            padding: 10px 40px;
-            position: relative;
-            background-color: inherit;
-            width: 50%;
-            }
-            .wrap::after {
-            content: '';
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            right: -17px;
-            background-color: #d5d8da;
-            border: 4px solid #b9bec0;
-            box-shadow:4px 4px 5px #83888a,-4px -4px 5px #bcc2c4;
-            top: 15px;
-            border-radius: 50%;
-            z-index: 1;
-            }
-            .left {
-            left: 0;
-            }
-            .right {
-            left: 50%;
-            }
-            .right::after {
-            left: -16px;
-            }
-            .content {
-            padding: 20px 30px;
-            border-radius: 50px;
-            background: #b9bec0;
-            box-shadow:  5px 5px 10px #9da2a3, 
-                        -5px -5px 10px #d5dbdd;
-            position: relative;
-            border-radius: 6px;
-            }
-            @media screen and (max-width: 600px) {
-            .timeline::after {
-            left: 31px;
-            }
-            .wrap {
-            width: 100%;
-            padding-left: 70px;
-            padding-right: 25px;
-            }
-            .wrap::before {
-            left: 60px;
-            border: medium solid white;
-            border-width: 10px 10px 10px 0;
-            border-color: transparent white transparent transparent;
-            }
-            .left::after, .right::after {
-            left: 15px;
-            }
-            .right {
-            left: 0%;
-            }
-            }
-            .languages{
-                font-family: 'Lora',serif; 
-                color:#595d5f;
-                font-size: 90%;
-            }
-            .languages .row{
-                margin-bottom:-1%;
-            }
-            .languages i{
-            font-size: 150%;
-            padding-left: 5%;
-        }
-        progress[value] {
-            width: 80%;
-            height: 10px;
-            margin-left: 20px;
-            -webkit-appearance: none;
-            margin-right: 10px;
-            }
-        progress::-webkit-progress-bar{
-            background-color: #b9bec0;
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
-        }
-        progress::-webkit-progress-value {
-            background-color: #595d5f;
-            border-radius: 10px;
-            }
-    </style>
-</head>
-<body>
-    <header>
-        <nav>
-            <ul class="navbar-list">
-                
-                <li class="nav-ele"><a href="#about" >About Me</a></li>
-                <li class="nav-ele"><a href="#projects">Projects</a></li>
-                <li class="nav-ele"><a href="#education">Timeline</a></li>
-                <li class="nav-ele"><a href="#langauges">Languages</a></li>
-                <li class="nav-ele"><a href="#contact">Contact Me</a></li>
+  <body>
+    <!-- ======= Navbar ======= -->
+    <div class="collapse navbar-collapse custom-navmenu" id="main-navbar">
+      <div class="container py-2 py-md-5">
+        <div class="row align-items-start">
+          <div class="col-md-2">
+            <ul class="custom-menu" style="line-height: 1.8 !important;">
+              <li class="active"><a href="index.html">Home</a></li>
+              <li><a href="about.html">About Me</a></li>
+              <li><a href="services.html">Works</a></li>
+              <li><a href="contact.html">Connect</a></li>
             </ul>
-        </nav>
-    </header>
-    <div class="image-cropper">
-        <img src="img/IMG_20200627_093136_616.jpg" alt="Me">
-    </div>
-    <section class="about" id="about"> 
-        <h3>About Me</h3>
-        <div class="container">
-        <p style="text-align: center;">"Talk is cheap , show me the code"<br>I live by this quote at all times . Therefore keeping this section short and simple, am more of a neighbour friendly tech guy with my laptop being my Robin . It is pretty much evident, that I am a comic nerd somewhat representing Dr Sheldon Cooper ,equally mad about his subject. I love to paint and also try to mimic Gordon Ramsay,not in dropping F bombs but his splendid dishes .</p>
-        <div class="row">
-            <div class="col span-1-of-3">
-                <i class="fas fa-utensils"></i>
+          </div>
+          <div class="col-md-6 d-none d-md-block mr-auto">
+            <div class="tweet d-flex">
+              <div style="padding-top: 0.5vw;">
+                    <p class="text-white">My Socials</p>
+                    <a href="https://www.linkedin.com/in/shinjon-das/"><span class="bi bi-linkedin text-white mt-2 mr-3"></span></a>
+                    <a href="https://github.com/shinjondas"><span class="bi bi-github text-white mt-2 mr-3"></span></a>
+                    <a href="https://www.instagram.com/shinjondas/"><span class="bi bi-instagram text-white mt-2 mr-3"></span></a><br><br>
+                    <a href="assets/resume/Shinjon's Resume.pdf" class="readmore text-white" style="border: 1px solid #fff !important;" download="resume">Download my CV</a>
+                
+              </div>
             </div>
-            <div class="col span-1-of-3">
-                <i class="fas fa-palette"></i>
-            </div>
-            <div class="col span-1-of-3">
-                <i class="fas fa-book"></i>
-            </div>
+          </div>
+          <div class="col-md-4 d-none d-md-block">
+            <h3>Hire Me</h3>
+            <p>
+              An experienced full stack developer having worked on multiple development projects. Have also worked on research-based projects in the field of Machine Learning.<br />
+              Mail me at:<a href="mailto:shinjon.das2019@vitstudent.ac.in" class="text-white"></i>shinjon.das2019@vitstudent.ac.in</a>
+            </p>
+          </div>
         </div>
-    </div>
-    </section>
-    <section class="projects" id="projects">
-        <div class="row">
-            <h3>Projects</h3>
-        </div>
-        <div class="project-box">
-        <div class="row">
-            <div class="col span-1-of-3">
-                <div class="box adeia">
-                    <h4>Adeia</h4>
-                    <p>A first of it's kind project undertaken to unify the admission process under one solid organisation</p>
-                </div>
-                <button class="btn"><a href="https://sway.office.com/5rRLfQiQmmjBBliv?ref=email" target="blank">See Project</a></button>
-            </div>
-            <div class="col span-1-of-3">
-                <div class="box">
-                    <h4>MyKhata</h4>
-                    <p>Tired of checking your coffers, we've got you covered. All your budget calculations- done by us.<br><br></p>
-                </div>
-                <button class="btn"><a href="https://github.com/shinjondas/LumosLabs_FinTech_MyKhata" target="blank">See Project</a></button>
-            </div>
-            <div class="col span-1-of-3">
-                <div class="box">
-                    <h4>OmniFood</h4>
-                    <p>Want that homecooked food, but can't cook. OmniFood is the way to go. One plan for all your hunger pangs.</p>
-                </div>
-                <button class="btn"><a href="https://github.com/shinjondas/WebTech_Project" target="blank">See Project</a></button>
-            </div>
-        </div></div>
-    </section>
-    <section class="education" id="education">
-        <div class="row">
-            <h3 style="margin-top:5%;margin-bottom:20px;text-align:center;font-size: 150%;">Timeline</h3>
-        </div>
-        <div class="timeline" style="margin-top:2%">
-            
-            <div class="wrap left">
-                <div class="content">
-                    <h2>2019</h2>
-                    <p>Passed ISC with 94.5% aggregate<br>Obtained Diploma in Fine Arts<br>Started studying IT at <b>VIT</b>, Vellore</p>
-                </div>
-                </div>
-            <div class="wrap right">
-                <div class="content">
-                    <h2>2018</h2>
-                    <p>Secured first position all-India at IIC Microsoft, Gurgaon</p>
-                </div>
-            </div>
-            <div class="wrap left">
-                <div class="content">
-                <h2>2016</h2>
-                <p>Passed ICSE with 96.4% aggregate</p>
-                </div>
-            </div>
-            <div class="wrap right">
-                <div class="content">
-                <h2>2015</h2>
-                <p>Won Inter-house Science Quiz</p>
-                </div>
-            </div>
-            <div class="wrap left">
-                <div class="content">
-                <h2>2010</h2>
-                <p>Won the first Inter-school Literary Quiz at Abhivyakti,2010</p>
-                </div>
-            </div>
-            <div class="wrap right">
-                <div class="content">
-                <h2>2007</h2>
-                <p>Joined The Heritage School, Kolkata</p>
-                </div>
-            </div>
-            <div class="wrap left">
-                <div class="content">
-                <h2>2005</h2>
-                <p>Joined South Point, Kolkata</p>
-                </div>
-            </div>
-            <div class="wrap right">
-                <div class="content">
-                <h2>2001</h2>
-                <p>Born in Kolkata, India</p>
-                </div>
-            </div>
-            </div>
-</section>
-<section class="languages" id="langauges" style="margin-bottom:5%">
-    <div class="row">
-        <h3 style="margin-top:5%;margin-bottom:20px;text-align:center;font-size: 150%;">Languages</h3>
-    </div>
-    <div class="row">
-        <div class="container">
-            <i class="fab fa-python"></i><progress value="25" max="100"></progress>25%
-        </div>
-    </div>
-    <div class="row">
-        <div class="container">
-            <i class="fab fa-java"></i><progress value="45" max="100"></progress>45%
-        </div>
-    </div>
-    <div class="row">
-        <div class="container">
-            <span style="font-size: 80%;margin-right:-10px;padding-left: 5%;">C++</span><progress value="35" max="100"></progress>35%
-        </div>
-    </div>
-    <div class="row">
-        <div class="container">
-            <i class="fab fa-js"></i><progress value="50" max="100"></progress>50%
-        </div>
-    </div>
-    <div class="row">
-        <div class="container">
-            <i class="fab fa-html5"></i><progress value="65" max="100"></progress>65%
-        </div>
-    </div>
-    <div class="row">
-        <div class="container">
-            <i class="fas fa-database"></i><progress value="45" max="100"></progress>45%
-        </div>
-    </div>
-    <div class="row">
-        <div class="container">
-            <span style="font-size: 110%;margin-right:18%;padding-left: 5%;">Others:</span><i class="fab fa-node-js"></i>  <i class="fab fa-angular"></i>  <i class="fab fa-css3-alt"></i>  <i class="fab fa-npm"></i>  <i class="fab fa-php"></i>
-        </div>
-    </div>
-</section>
-<section class="Contact" id="contact">
-    <div class="row">
-        <h3 style="margin-top:5%;margin-bottom:20px;text-align:center;font-size: 150%;color:#595d5f;">Get In Touch</h3>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col span-1-of-3" style="margin-right:10px">
-                Mail me at: <b>shinjon12@gmail.com</b>
-            </div>
-            <div class="col span-1-of-3" style="margin-right:-10px">
-                &nbsp;&nbsp;Visit my <a href="https://github.com/shinjondas" target="blank">GitHub</a> profile
-            </div>
-            <div class="col span-1-of-3">
-                Visit my <a href="https://www.linkedin.com/in/shinjon-das-154b04135/" target="blank">LinkedIn</a> profile
-            </div>
-            <style>
-                .Contact a{
-                    text-decoration: none;
-                    color:#595d5f;
-                    font-weight: 600;
-                }
-                .Contact a:hover,.Contact a:active{
-                    color:#474b4c;
-                }
-            </style>
-        </div>
+      </div>
     </div>
 
-</section>
-<br><br><br><br>
+    <nav class="navbar navbar-light custom-navbar">
+      <div class="container">
+        <img src="img/Glasses_perspective_matte_s.png" style="height:12vh;width:12vh;display:block">
+        <a class="navbar-brand" href="https://www.linkedin.com/in/shinjon-das/">Shinjon Das</a>
+        <a
+          href="#"
+          class="burger"
+          data-bs-toggle="collapse"
+          data-bs-target="#main-navbar"
+        >
+          <span></span>
+        </a>
+      </div>
+    </nav>
+
+    <main id="main">
+      <!-- ======= Works Section ======= -->
+      <section class="section site-portfolio">
+        <div class="container">
+          <div class="row mb-5 align-items-center">
+            <div class="col-md-12 col-lg-6 mb-4 mb-lg-0" data-aos="fade-up">
+              <h2>Hey it's me </h2>
+              <p class="mb-0" style="font-size: 0.85rem;">
+                Full Stack Developer | ML Enthusiast | B.Tech Undergraduate in Information Technology
+              </p>
+            </div>
+            
+            <div
+              class="col-md-12 col-lg-6 text-start text-lg-end"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              
+              <div id="filters" class="filters">
+                <a href="#" data-filter="*" class="active">All</a>
+                <a href="#" data-filter=".web">Web</a>
+                <a href="#" data-filter=".ml">Machine Learning</a>
+              </div>
+            </div>
+          </div>
+          <div
+            id="portfolio-grid"
+            class="row"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+          
+            <div class="item ml col-sm-6 col-md-4 col-lg-4 mb-5">
+              <div class="repo-card" data-repo="shinjondas/fake-news-detection"></div>
+            </div>
+            <div class="item web col-sm-6 col-md-4 col-lg-4 mb-5">
+              <div class="repo-card" data-repo="shinjondas/domain-test"></div>
+            </div>
+            <!--<div class="item web col-sm-6 col-md-4 col-lg-4 mb-5">
+              <div class="repo-card" data-repo="SSaxena2001/docs4docs"></div>
+            </div>-->
+            <div class="item web col-sm-6 col-md-4 col-lg-4 mb-5">
+              <div class="repo-card" data-repo="shinjondas/COViCARE"></div>
+            </div>
+            <div class="item web col-sm-6 col-md-4 col-lg-4 mb-5">
+              <div class="repo-card" data-repo="shinjondas/StuSkill"></div>
+            </div>
+            <div class="item web col-sm-6 col-md-4 col-lg-4 mb-5">
+              <div class="repo-card" data-repo="shinjondas/Instagram-API"></div>
+            </div>
+            <div class="item ml col-sm-6 col-md-4 col-lg-4 mb-5">
+              <div class="repo-card" data-repo="shinjondas/twitter-hate-detection"></div>
+            </div>
+            <div class="item web col-sm-6 col-md-4 col-lg-4 mb-5">
+              <div class="repo-card" data-repo="shinjondas/OmniFood"></div>
+            </div>
+
+            
+          </div>
+        </div>
+      </section>
+      <!-- End  Works Section -->
+
+      <!-- ======= Clients Section ======= -->
+      <!--<section class="section">
+        <div class="container">
+          <div class="row justify-content-center text-center mb-4">
+            <div class="col-5">
+              <h3 class="h3 heading">My Clients</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit
+                explicabo inventore.
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4 col-sm-4 col-md-2">
+              <a href="#" class="client-logo"
+                ><img
+                  src="assets/img/logo-adobe.png"
+                  alt="Image"
+                  class="img-fluid"
+              /></a>
+            </div>
+            <div class="col-4 col-sm-4 col-md-2">
+              <a href="#" class="client-logo"
+                ><img
+                  src="assets/img/logo-uber.png"
+                  alt="Image"
+                  class="img-fluid"
+              /></a>
+            </div>
+            <div class="col-4 col-sm-4 col-md-2">
+              <a href="#" class="client-logo"
+                ><img
+                  src="assets/img/logo-apple.png"
+                  alt="Image"
+                  class="img-fluid"
+              /></a>
+            </div>
+            <div class="col-4 col-sm-4 col-md-2">
+              <a href="#" class="client-logo"
+                ><img
+                  src="assets/img/logo-netflix.png"
+                  alt="Image"
+                  class="img-fluid"
+              /></a>
+            </div>
+            <div class="col-4 col-sm-4 col-md-2">
+              <a href="#" class="client-logo"
+                ><img
+                  src="assets/img/logo-nike.png"
+                  alt="Image"
+                  class="img-fluid"
+              /></a>
+            </div>
+            <div class="col-4 col-sm-4 col-md-2">
+              <a href="#" class="client-logo"
+                ><img
+                  src="assets/img/logo-google.png"
+                  alt="Image"
+                  class="img-fluid"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </section>-->
+      <!-- End Clients Section -->
+
+      <!-- ======= Services Section ======= -->
+      <section class="section services">
+        <div class="container">
+          <div class="row justify-content-center text-center mb-4">
+            <div class="col-5">
+              <h3 class="h3 heading">What I Do</h3>
+              <p>
+                This is the stuff I'm good at. Kinda.
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+              <i class="bi bi-braces"></i>
+              <h4 class="h4 mb-2">Full Stack Development</h4>
+              <p>
+                Work with fluidly with the server and client side of an application, creating the perfect balance of usability and functionality.<br><br>Commonly used:
+              </p>
+              <ul class="list-unstyled list-line">
+                <li>PHP, SQL, Apache</li>
+                <li>React.js</li>
+                <li>Node.js, Express, MongoDB</li>
+              </ul>
+            </div>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+              <i class="bi bi-laptop"></i>
+              <h4 class="h4 mb-2">Web Design</h4>
+              <p>
+                Create and build websites and web pages by combining any number of visual design elements including text, photos, graphics etc.<br><br>Commonly used:
+              </p>
+              <ul class="list-unstyled list-line">
+                <li>HTML/CSS</li>
+                <li>Vanilla JS</li>
+                <li>jQuery</li>
+                <li>Various third party plugins</li>
+              </ul>
+            </div>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-4">
+              <i class="bi bi-bar-chart"></i>
+              <h4 class="h4 mb-2">Machine Learning</h4>
+              <p>
+                Analyzing sets of structured and unstructured data that is analyzed, processed,modelled data used to interpret the results.<br><br>Commonly used:
+              </p>
+              <ul class="list-unstyled list-line">
+                <li>Python</li>
+                <li>Tensorflow</li>
+                <li>Flask</li>
+                <li>Keras</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Services Section -->
+
+      <!-- ======= Testimonials Section ======= -->
+  <!--<section class="section pt-0">
+        <div class="container">
+          <div
+            class="testimonials-slider swiper"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="testimonial-wrap">
+                  <div class="testimonial">
+                    <img
+                      src="assets/img/person_1.jpg"
+                      alt="Image"
+                      class="img-fluid"
+                    />
+                    <blockquote>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Quisquam necessitatibus incidunt ut officiis explicabo
+                        inventore.
+                      </p>
+                    </blockquote>
+                    <p>&mdash; Jean Hicks</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="testimonial-wrap">
+                  <div class="testimonial">
+                    <img
+                      src="assets/img/person_2.jpg"
+                      alt="Image"
+                      class="img-fluid"
+                    />
+                    <blockquote>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Quisquam necessitatibus incidunt ut officiis explicabo
+                        inventore.
+                      </p>
+                    </blockquote>
+                    <p>&mdash; Chris Stanworth</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>-->
+      <!-- End Testimonials Section -->
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <p class="mb-1">
+              &copy; Copyright Shinjon Das 2022. All Rights Reserved.
+            </p>
+          </div>
+          <div class="col-sm-6 social text-md-end">
+            <a href="https://www.linkedin.com/in/shinjon-das/"><span class="bi bi-linkedin"></span></a>
+            <a href="https://github.com/shinjondas"><span class="bi bi-github"></span></a>
+            <a href="https://www.instagram.com/shinjondas/"><span class="bi bi-instagram"></span></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
